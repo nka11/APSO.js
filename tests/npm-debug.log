@@ -1,0 +1,66 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/opt/local/bin/npm', 'install', 'jsdoc' ]
+info using npm@1.1.24
+info using node@v0.6.19
+verbose /opt/local/bin/node node symlink
+verbose config file /home/nico/.npmrc
+verbose config file /opt/local/etc/npmrc
+verbose config file /opt/local/lib/node_modules/npm/npmrc
+verbose caching /opt/wspace/node_modules/log4js/package.json
+verbose caching /opt/wspace/node_modules/mongoose/package.json
+verbose caching /opt/wspace/node_modules/emailjs/package.json
+verbose caching /opt/wspace/node_modules/jison/package.json
+verbose caching /opt/wspace/node_modules/nodelint/package.json
+verbose caching /opt/wspace/node_modules/mongodb/package.json
+verbose caching /opt/wspace/node_modules/passport/package.json
+verbose caching /opt/wspace/node_modules/jshint/package.json
+verbose caching /opt/wspace/node_modules/swig/package.json
+verbose caching /opt/wspace/node_modules/express/package.json
+verbose caching /opt/wspace/node_modules/passport-facebook/package.json
+verbose caching /opt/wspace/node_modules/passport-local/package.json
+verbose caching /opt/wspace/node_modules/nconf/package.json
+verbose caching /opt/wspace/node_modules/jugglingdb/package.json
+verbose caching /opt/wspace/node_modules/vows/package.json
+verbose cache add [ 'jsdoc', null ]
+silly cache add: name, spec, args [ undefined, 'jsdoc', [ 'jsdoc', null ] ]
+verbose parsed url { pathname: 'jsdoc', path: 'jsdoc', href: 'jsdoc' }
+verbose addNamed [ 'jsdoc', '' ]
+verbose addNamed [ null, '' ]
+silly name, range, hasData [ 'jsdoc', '', false ]
+verbose raw, before any munging jsdoc
+verbose url resolving [ 'https://registry.npmjs.org/', './jsdoc' ]
+verbose url resolved https://registry.npmjs.org/jsdoc
+http GET https://registry.npmjs.org/jsdoc
+http 200 https://registry.npmjs.org/jsdoc
+silly get cb [ 200,
+silly get cb   { vary: 'Accept',
+silly get cb     server: 'CouchDB/1.2.0 (Erlang OTP/R15B)',
+silly get cb     etag: '"963446ZGEFOVUZ9OX4BOEDOQW"',
+silly get cb     date: 'Tue, 06 Nov 2012 08:52:31 GMT',
+silly get cb     'content-type': 'application/json',
+silly get cb     'content-length': '1131' } ]
+silly name, range, hasData 2 [ 'jsdoc', '', true ]
+silly versions [ 'jsdoc', [] ]
+ERR! Error: No compatible version found: jsdoc
+ERR! No valid targets found.
+ERR! Perhaps not compatible with your version of node?
+ERR!     at installTargetsError (/opt/local/lib/node_modules/npm/lib/cache.js:496:10)
+ERR!     at next_ (/opt/local/lib/node_modules/npm/lib/cache.js:446:17)
+ERR!     at next (/opt/local/lib/node_modules/npm/lib/cache.js:423:44)
+ERR!     at /opt/local/lib/node_modules/npm/lib/cache.js:416:5
+ERR!     at saved (/opt/local/lib/node_modules/npm/lib/utils/npm-registry-client/get.js:151:7)
+ERR!     at Object.oncomplete (/opt/local/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:230:7)
+ERR! You may report this log at:
+ERR!     <http://github.com/isaacs/npm/issues>
+ERR! or email it to:
+ERR!     <npm-@googlegroups.com>
+ERR! 
+ERR! System Linux 3.2.0-32-generic
+ERR! command "node" "/opt/local/bin/npm" "install" "jsdoc"
+ERR! cwd /opt/wspace/menestrel/src/apso/tests
+ERR! node -v v0.6.19
+ERR! npm -v 1.1.24
+ERR! message No compatible version found: jsdoc
+ERR! message No valid targets found.
+ERR! message Perhaps not compatible with your version of node?
+verbose exit [ 1, true ]
