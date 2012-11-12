@@ -1,0 +1,24 @@
+{ "name" : "apso",
+  "main" : "./apso.js",
+  "version": "0.0.1-beta",
+  "description": "bootweb application for an Open Source Permanent Assembly (Assemblée Permanente Source Ouverte) in French",
+  "keywords": ["expressjs", "web framework","voting","political system", "real gaming"],
+  "contributors": [
+      { "name": "Nicolas Karageuzian", "email": "nico@karageuzian.com" },
+      { "name": "William Theaux", "email": "williamtheaux@gmail.com" },
+      { "name": "Xavier G.", "email": "netz@sploing.fr" }, 
+    ],
+    "homepage": "http://redmine.menestrel.net/projects/apso",
+    "bugs":{
+    "url" : "http://redmine.menestrel.net/projects/APSO",
+    "email" : "apso@menestrel.net"
+    },
+    "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/nka11/APSO.git"
+  },
+  "dependencies" :
+      { "bootweb" : "0.0.1"
+        "domo": "0.5"
+      }
+}
