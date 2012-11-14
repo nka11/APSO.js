@@ -1,0 +1,37 @@
+{% extends 'apsoLayout.html' %}
+{% block nav %}
+  <li><a href="{{prefix}}">Accueil</a></li>
+  <li class="divider-vertical"></li>
+  <li><a href="{{prefix}}bureau">Bureau</a></li>
+  <li><a href="{{prefix}}libelles">Libelles</a></li>
+{% endblock %}
+
+
+{% block content %}
+      <div class="row-fluid">
+
+        <div class="span12">
+
+          <div class="hero-unit">
+            <h1>S'enregistrer</h1>
+            <form method="POST" action="/register">
+              <label class="control-label" for="emailInput">Adresse mail</label>
+              <input type="text" name="email" id="emailInput">
+              <label class="control-label" for="pseudoInput">Pseudo</label>
+              <input type="text" name="pseudo" id="pseudoInput">
+              <label class="control-label" for="password">Mot de passe</label>
+              <input type="password" name="password" id="passwordInput">
+              <input type="hidden" name="redirect" value="{{prefix}}registered">
+              <input type="submit" class="btn" value="S'enregistrer">
+            </form>
+            
+          </div>
+          <div class="row-fluid">
+            
+            
+
+            
+          </div><!--/row-->
+          </div><!--/span-->
+      </div><!--/row-->
+{% endblock %}

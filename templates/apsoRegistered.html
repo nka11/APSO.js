@@ -1,0 +1,23 @@
+{% extends 'apsoLayout.html' %}
+{% block nav %}
+  <li><a href="{{prefix}}">Accueil</a></li>
+  <li class="divider-vertical"></li>
+  <li><a href="{{prefix}}bureau">Bureau</a></li>
+  <li><a href="{{prefix}}libelles">Libelles</a></li>
+{% endblock %}
+
+
+{% block content %}
+      <div class="row-fluid">
+
+        <div class="span12">
+
+          <div class="hero-unit">
+            <h1>Enregistrement réussi</h1>
+            <p>La première étape de l'enregistrement est terminée. Vous avez reçu un mail pour valider l'enregistrement. Veuillez consulter votre boîte mail.</p>
+            
+          </div>
+
+          </div><!--/span-->
+      </div><!--/row-->
+{% endblock %}

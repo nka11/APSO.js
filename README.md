@@ -1,9 +1,9 @@
 Outil d'assemblée permanente
 ============================
 
-Bienvenue sur APO (Assemblee Permanente Ouverte)
+Bienvenue sur APSO (Assemblee Permanente Source Ouverte)
 
-APO permet la constitution d'une assemblée permanente.
+APSO permet la constitution d'une assemblée permanente.
 
 Modules :
 
@@ -13,5 +13,5 @@ Modules :
 Construction :
 --------------
 
-OAP est un module bootweb facile à activer et intégrer dans votre application (Voir doc bootweb)
+APSO est un module bootweb facile à activer et intégrer dans votre application (Voir doc bootweb)
 

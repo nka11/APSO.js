@@ -1,212 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>APSO - Assemblée Publique Source Ouverte</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+{% extends 'apsoLayout.html' %}
+{% block nav %}
+  <li class="active"><a href="{{prefix}}">Accueil</a></li>
+  <li class="divider-vertical"></li>
+  <li><a href="{{prefix}}bureau">Bureau</a></li>
+  <li><a href="{{prefix}}libelles">Libelles</a></li>
+{% endblock %}
 
-    <!-- Le styles -->
-    <link href="/deps/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <style type="text/css">
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-      .sidebar-nav {
-        padding: 9px 0;
-      }
-    </style>
-    <link href="/deps/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- Fav and touch icons -->
-    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/deps/bootstrap/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/deps/bootstrap/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/deps/bootstrap/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="/deps/bootstrap/ico/apple-touch-icon-57-precomposed.png">
-  </head>
-
-  <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">APSO</a>
-          <div class="nav-collapse collapse">
-            <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link">Username</a>
-            </p>
-            <ul class="nav">
-              <li><a href="#">Accueil</a></li>
-              <li class="active"><a href="#about">Bureau</a></li>
-              <li><a href="#contact">Libelles</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
-
-    
-    <div class="container-fluid">
+{% block content %}
       <div class="row-fluid">
-          <!-- 
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li class="active"><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-            </ul>
-          </div> 
-        </div>
-          -->
+
         <div class="span12">
-          <!--
+
           <div class="hero-unit">
-            <h1>Hello, world!</h1>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+            <h1>Bienvenue sur l'APSO</h1>
+            <p>L'assemblée Permanente Source Ouverte.
+              
+            </p>
           </div>
-          -->
           <div class="row-fluid">
             <div class="span4">
-              <h2>Souhait</h2>
-              <p>Voici votre souhait de bureau, exprimé le 10/11/2012</p>
-              <p>Président : m1 (1 voix)</p>
-              <p>Secrétaire : m3 (1 voix)</p>
-              <p>Trésorier : m5 (1 voix)</p>
-              <p>Vice-Président : m7 (1 voix)</p>
-              
-            </div><!--/span-->
-            <div class="span4">
-              <h2>Changez vote</h2>
-                  <form>
-            <div class="control-group">
-            <label class="control-label" for="inputPresident">Président</label>
-            <div class="controls">
-            <select id="inputPresident">
-            <option>m1</option>
-            <option>m2</option>
-            <option>m3</option>
-            <option>m4</option>
-            <option>m5</option>
-            <option>m6</option>
-            <option>m7</option>
-            </select>
-            </div>
-            </div>
-<div class="control-group">
-            <label class="control-label" for="inputPresident">Secrétaire</label>
-            <div class="controls">
-            <select id="inputPresident">
-            <option>m1</option>
-            <option>m2</option>
-            <option>m3</option>
-            <option>m4</option>
-            <option>m5</option>
-            <option>m6</option>
-            <option>m7</option>
-            </select>
-            </div>
-            </div>
-            <div class="control-group">
-            <label class="control-label" for="inputPresident">Trésorier</label>
-            <div class="controls">
-            <select id="inputPresident">
-            <option>m1</option>
-            <option>m2</option>
-            <option>m3</option>
-            <option>m4</option>
-            <option>m5</option>
-            <option>m6</option>
-            <option>m7</option>
-            </select>
-            </div>
-            </div>
-            <div class="control-group">
-            <label class="control-label" for="inputPresident">Vice Président</label>
-            <div class="controls">
-            <select id="inputPresident">
-            <option>m1</option>
-            <option>m2</option>
-            <option>m3</option>
-            <option>m4</option>
-            <option>m5</option>
-            <option>m6</option>
-            <option>m7</option>
-            </select>
-            </div>
-            </div>
-             <div class="control-group">
-            <div class="controls">
-            <button type="submit" class="btn">Vote</button>
-            </div>
-            </div>
-            </form>
-              
-            </div><!--/span-->
-            <div class="span4">
-              <h2>composition du bureau</h2>
+              <h2>Composition du bureau</h2>
               <p>Président : m1 (1 voix)</p>
               <p>Secrétaire : m3 (1 voix)</p>
               <p>Trésorier : m5 (1 voix)</p>
               <p>Vice-Président : m7 (1 voix)</p>
               <p><a class="btn" href="#">Liste des votes</a></p>
-
+              <a class="btn" href="{{prefix}}bureau">Voir et voter le bureau</a>
             </div><!--/span-->
+            <div class="span4">
+              <h2>Les derniers votes de libelles</h2>
+              <ul>
+                <li><em>par <stong>m2</stong> le --/--/----</em><br/>
+                  <a href="#">Titre Libelle</a> <br/>
+                  expression
+                </li>
+                <li><em>par <stong>m2</stong> le --/--/----</em><br/>
+                  <a href="#">Titre Libelle</a> <br/>
+                  expression
+                </li>
+                <li><em>par <stong>m2</stong> le --/--/----</em><br/>
+                  <a href="#">Titre Libelle</a> <br/>
+                  expression
+                </li>
+                
+              </ul>
+            </div>
+              <div class="span4">
+            {% if user.email == "anonymous" %}
+              <h2>Se connecter</h2>
+              <form method="POST" action="/login">
+                <label class="control-label" for="emailInput">Adresse mail</label>
+                <input type="text" name="email" id="emailInput">
+                <label class="control-label" for="password">Mot de passe</label>
+                <input type="password" name="password" id="passwordInput">
+                <input type="submit" class="btn" value="Se connecter">
+                </form>
+                <h2>S'enregistrer</h2>
+              <form method="POST" action="/register">
+                <label class="control-label" for="emailInput">Adresse mail</label>
+                <input type="text" name="email" id="emailInput">
+                <label class="control-label" for="pseudoInput">Pseudo</label>
+                <input type="text" name="pseudo" id="pseudoInput">
+                <label class="control-label" for="password">Mot de passe</label>
+                <input type="password" name="password" id="passwordInput">
+                <input type="hidden" name="redirect" value="{{prefix}}registered">
+                <input type="submit" class="btn" value="S'enregistrer">
+              </form>
+            {% else %}
+              <h2>Mon compte</h2>
+                <input type="checkbox"> S'exclure de la liste de choix des votes du bureau<br/>
+                <form>
+                  <label class="control-label" for="password">Mot de passe</label>
+                  <input type="password" name="password" id="passwordInput">
+                  <label class="control-label" for="password">Mot de passe</label>
+                  <input type="password" name="password" id="passwordInput">
+                  <input type="submit" class="btn" value="Changer de mot de passe">
+                </form>
+            {% endif %}
+              </div>
+
+            
           </div><!--/row-->
           </div><!--/span-->
       </div><!--/row-->
-
-      <hr>
-
-      <footer>
-        <p>APSO - Assemblée Permanente Source Ouverte</p>
-      </footer>
-
-    </div><!--/.fluid-container-->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/deps/bootstrap/js/jquery.js"></script>
-    <script src="/deps/bootstrap/js/bootstrap-transition.js"></script>
-    <script src="/deps/bootstrap/js/bootstrap-alert.js"></script>
-    <script src="/deps/bootstrap/js/bootstrap-modal.js"></script>
-    <script src="/deps/bootstrap/js/bootstrap-dropdown.js"></script>
-    <script src="/deps/bootstrap/js/bootstrap-scrollspy.js"></script>
-    <script src="/deps/bootstrap/js/bootstrap-tab.js"></script>
-    <script src="/deps/bootstrap/js/bootstrap-tooltip.js"></script>
-    <script src="/deps/bootstrap/js/bootstrap-popover.js"></script>
-    <script src="/deps/bootstrap/js/bootstrap-button.js"></script>
-    <script src="/deps/bootstrap/js/bootstrap-collapse.js"></script>
-    <script src="/deps/bootstrap/js/bootstrap-carousel.js"></script>
-    <script src="/deps/bootstrap/js/bootstrap-typeahead.js"></script>
-
-  </body>
-</html>
+{% endblock %}
