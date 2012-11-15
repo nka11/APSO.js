@@ -114,6 +114,15 @@ bapp.mapUrls = function(app, cb){
           // other values
         }));
     });
+    app.get(this.options.prefix + "libelles", function(req, res,next) {
+        res.send(bootweb.swig.compileFile("apsoLibelles.html")
+          .render({
+          // values required for layout
+          prefix : this.options.prefix,
+          user: req.user
+          // other values
+        }));
+    });
     // action de vote sur le bureau
     app.post(this.options.prefix + "bureau", function(req, res,next) {
         
