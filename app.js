@@ -87,6 +87,15 @@ bapp.mapUrls = function(app, cb){
           // other values
         }));
     });
+    app.get(this.options.prefix + 'validated', function(req, res,next) {
+      res.send(bootweb.swig.compileFile("apsoValidated.html")
+        .render({
+          // values required for layout
+          prefix : this.options.prefix,
+          user: req.user
+          // other values
+        }));
+    });
     app.get(this.options.prefix, function(req, res,next) {
         res.send(bootweb.swig.compileFile("apsoIndex.html")
           .render({
