@@ -65,6 +65,7 @@
                 <label class="control-label" for="password">Mot de passe</label>
                 <input type="password" name="password" id="passwordInput">
                 <input type="hidden" name="redirect" value="{{prefix}}registered">
+                <input type="hidden" name="validationData" value="redirect:{{prefix}}validated">
                 <input type="submit" class="btn" value="S'enregistrer">
               </form>
             {% else %}
