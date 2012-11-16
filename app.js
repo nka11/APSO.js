@@ -114,7 +114,7 @@ bapp.mapUrls = function(app, cb){
           // other values
         }));
     });
-    app.get(this.options.prefix + "libelles", bootweb.auth.verify("read"), function(req, res,next) {
+    app.get(this.options.prefix + "libelles", function(req, res,next) {
         res.send(bootweb.swig.compileFile("apsoLibelles.html")
           .render({
           // values required for layout
