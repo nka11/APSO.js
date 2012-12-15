@@ -20,7 +20,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 */
 
-var bootweb = require('../bootweb'),
+var bootweb = require('bootweb'),
   _ = require("util"),
   swig = bootweb.swig,
   logger = bootweb.getLogger('aosp'),
@@ -48,6 +48,7 @@ bapp.init = function(options,cb) {
   bootweb.templatesDirs.push(__dirname + "/templates");
   this.options = options;
   var bureau;
+  /*
   var commissions = require('./models/commissions');
   logger.info("initializing bureau");
   commissions.Commission.findOne({where:{name:'bureau'}},function(err, bur) {
@@ -65,7 +66,8 @@ bapp.init = function(options,cb) {
     bapp.bureau = bureau;
     cb(null,bapp);
   });
-   
+  */
+   cb(null,bapp);
 }
 
 bapp.mapUrls = function(app, cb){
@@ -114,7 +116,7 @@ bapp.mapUrls = function(app, cb){
           // other values
         }));
     });
-    app.get(this.options.prefix + "libelles", function(req, res,next) {
+    app.get(this.options.prefix + "libelles",bootweb.auth.verify("read"), function(req, res,next) {
         res.send(bootweb.swig.compileFile("apsoLibelles.html")
           .render({
           // values required for layout

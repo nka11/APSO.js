@@ -26,7 +26,7 @@ var forEach = function(callback) {
         }
     }
 }
-var bootweb = require("../../bootweb"),
+var bootweb = require("bootweb"),
     schema   = bootweb.getSchema(),
     logger = bootweb.getLogger("aosp.commission"),
     _ = require("util"),
