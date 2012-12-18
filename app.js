@@ -20,15 +20,16 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 */
 
-var bootweb = require('bootweb'),
+var manager,
+  bootweb = require('bootweb'),
   _ = require("util"),
   swig = bootweb.swig,
   logger = bootweb.getLogger('aosp'),
-  bapp = function(){
-      return this;
-  }();
+  EventEmitter = require('events').EventEmitter,
+  apso = new EventEmitter()
+  ;
 
-bapp.init = function(options,cb) {
+apso.init = function(options,cb) {
   logger.info("Starting aosp initialization");
   if (cb == null && typeof options === "function") {
     cb = options;
@@ -63,19 +64,22 @@ bapp.init = function(options,cb) {
       logger.info("bureau is found : " + _.inspect(bur));
       bureau = bur;
     }
-    bapp.bureau = bureau;
-    cb(null,bapp);
+    apso.bureau = bureau;
+    cb(null,apso);
   });
   */
-   cb(null,bapp);
+  bootweb.on('ready', function(){
+    apso.emit('init',apso);
+  });
+   cb(null,apso);
 }
 
-bapp.mapUrls = function(app, cb){
+apso.mapUrls = function(app, cb){
     app.get(this.options.prefix + 'register', function(req, res,next) {
       res.send(bootweb.swig.compileFile("apsoRegister.html")
         .render({
           // values required for layout
-          prefix : this.options.prefix,
+          prefix : apso.options.prefix,
           user: req.user
           // other values
         }));
@@ -84,7 +88,7 @@ bapp.mapUrls = function(app, cb){
       res.send(bootweb.swig.compileFile("apsoRegistered.html")
         .render({
           // values required for layout
-          prefix : this.options.prefix,
+          prefix : apso.options.prefix,
           user: req.user
           // other values
         }));
@@ -102,7 +106,7 @@ bapp.mapUrls = function(app, cb){
         res.send(bootweb.swig.compileFile("apsoIndex.html")
           .render({
           // values required for layout
-          prefix : this.options.prefix,
+          prefix : apso.options.prefix,
           user: req.user
           // other values
         }))
@@ -111,7 +115,7 @@ bapp.mapUrls = function(app, cb){
         res.send(bootweb.swig.compileFile("apsoBureau.html")
           .render({
           // values required for layout
-          prefix : this.options.prefix,
+          prefix : apso.options.prefix,
           user: req.user
           // other values
         }));
@@ -120,16 +124,27 @@ bapp.mapUrls = function(app, cb){
         res.send(bootweb.swig.compileFile("apsoLibelles.html")
           .render({
           // values required for layout
-          prefix : this.options.prefix,
+          prefix : apso.options.prefix,
           user: req.user
           // other values
         }));
     });
     // action de vote sur le bureau
-    app.post(this.options.prefix + "bureau", function(req, res,next) {
+    app.post(this.options.prefix + "bureau", bootweb.auth.verify(),function(req, res,next) {
         
     });
+    
+     app.get(this.options.prefix + 'admin', bootweb.auth.verify(),function(req, res,next) {
+      res.send(bootweb.swig.compileFile("apsoAdmin.html")
+        .render({
+          // values required for layout
+          prefix : apso.options.prefix,
+          user: req.user
+          // other values
+        }));
+    });
+    
 }
 
-module.exports = bapp;
-
+module.exports = apso;
+manager = require('./lib/manager');

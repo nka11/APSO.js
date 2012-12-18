@@ -1,0 +1,96 @@
+{% extends 'apsoLayout.html' %}
+{% block nav %}
+  <li><a href="{{prefix}}">Accueil</a></li>
+  <li class="divider-vertical"></li>
+  <li><a href="{{prefix}}bureau">Bureau</a></li>
+  <li><a href="{{prefix}}libelles">Libelles</a></li>
+{% endblock %}
+
+
+{% block content %}
+<div class="row-fluid">
+  <div class="span9">
+  <div class="hero-unit">
+    <div class="row-fluid">
+      <div class="span11">
+    <h2>Administration</h2><p>Utilisateurs</p>
+      <table class="table table-hover">
+        <thead>
+          <tr><th>Titre</th><th>Votre choix</th><th>Echeance</th><th>Resultat</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>suspension des activités d'hiver</strong><br/>
+            Laisser le temps au repos et à la régénération
+          </td><td><form method="post">
+          <label class="radio">
+  <input type="radio" name="optionsRadios" value="option1">
+  Oui
+  </label>
+  <label class="radio">
+  <input type="radio" name="optionsRadios" value="option2">
+  Non
+  </label></form></td><td>12/12/2012</td><td><table><tr><td>oui</td><td>non</td></tr><tr><td>5</td><td>3</td></tr></table></td></tr>
+          <tr><td><strong>planifications depenses 2013</strong><br/>Utiliser le budget de l'association pour faire campagne en faveur de la démocratie directe</td><td></td><td>31/12/2012</td><td></td></tr>
+          <tr><td><strong>positionnement pro-hadopi</strong><br/>Défendre l'idée d'une répression</td><td></td><td>permanent</td><td></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="span1">
+        <h1>V<br/>O<br/>T<br/>E<br/>Z</h1>
+      </div>
+    </div>
+    </div>
+    <h2>Libellés encore ouverts</h2>
+      <p>Libellés pour lesquels vous avez exprimés un vote et que vous pouvez modifier</p>
+      <table class="table table-hover">
+        <thead>
+          <tr><th>Titre</th><th>Votre choix</th><th>Echeance</th><th>Resultat</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>suspension des activités d'hiver</strong><br/>
+            Laisser le temps au repos et à la régénération
+          </td><td><form method="post">
+          <label class="radio">
+  <input type="radio" name="optionsRadios" value="option1" checked>
+  Oui
+  </label>
+  <label class="radio">
+  <input type="radio" name="optionsRadios"  value="option2">
+  Non
+  </label></form></td><td>12/12/2012</td><td><table><tr><td>oui</td><td>non</td></tr><tr><td>5</td><td>3</td></tr></table></td></tr>
+          <tr><td><strong>planifications depenses 2013</strong><br/>Utiliser le budget de l'association pour faire campagne en faveur de la démocratie directe</td><td></td><td>31/12/2012</td><td></td></tr>
+          <tr><td><strong>positionnement pro-hadopi</strong><br/>Défendre l'idée d'une répression</td><td></td><td>permanent</td><td></td></tr>
+        </tbody>
+      </table>
+     
+    </div>
+
+  
+  <div class="span3">
+    <h3>Liste des libellés</h3>
+    <h4>En cours</h4>
+    <table class="table table-condensed table-hover">
+      <thead>
+        <tr><td>Titre</td><td>status</td></tr>
+      </thead>
+      <tbody>
+        <tr class="success"><td>suspension des activités d'hiver</td><td>accepté</td></tr>
+        <tr class="info"><td>planifications depenses 2013</td><td>a discuter</td></tr>
+        <tr class="error"><td>positionnement pro-hadopi</td><td>rejeté</td></tr>
+      </tbody>
+    </table>
+    <h4>Echu</h4>
+    <table class="table table-condensed table-hover">
+      <thead>
+        <tr><td>Titre</td><td>status</td></tr>
+      </thead>
+      <tbody>
+        <tr class="success"><td>extension permaculture</td><td>accepté</td></tr>
+        <tr class="info"><td>planifications depenses 2011</td><td>autre</td></tr>
+        <tr class="success"><td>Défense des biens communs</td><td>accepté</td></tr>
+      </tbody>
+    </table>
+  </div>
+  
+</div><!--/row-->
+{% endblock %}

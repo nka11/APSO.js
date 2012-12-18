@@ -1,6 +1,6 @@
 /*
 
-OAP- Open Permanent Assembly Bootweb module
+APSO- Assemblée Permanente Source Ouverte - Bootweb module
 Copyright (C) $year Nicolas Karageuzian
 
 This program is free software; you can redistribute it and/or

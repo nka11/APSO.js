@@ -3,7 +3,8 @@ bootweb.on("init", function(){
     exports.models = {
         commission: require("./models/commissions").Commission,
         
-    }
+    };
+    
 
 })
 
