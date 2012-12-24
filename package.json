@@ -15,10 +15,10 @@
     },
     "repository" :
   { "type" : "git"
-  , "url" : "https://github.com/nka11/APSO.git"
+  , "url" : "https://github.com/nka11/APSO.js.git"
   },
   "dependencies" :
-      { "bootweb" : "0.0.1"
+      { "bootweb" : "https://github.com/nka11/bootweb.git"
         "domo": "0.5"
       }
 }

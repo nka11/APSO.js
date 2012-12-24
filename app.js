@@ -26,7 +26,7 @@ var manager,
   swig = bootweb.swig,
   logger = bootweb.getLogger('aosp'),
   EventEmitter = require('events').EventEmitter,
-  apso = new EventEmitter()
+  apso = new EventEmitter();
   ;
 
 apso.init = function(options,cb) {
@@ -68,14 +68,18 @@ apso.init = function(options,cb) {
     cb(null,apso);
   });
   */
-  bootweb.on('ready', function(){
-    apso.emit('init',apso);
-  });
+  
    cb(null,apso);
 }
 
+bootweb.on('ready', function(){
+  logger.info("Initialising socket.io");
+ // apso.io = 
+  logger.info("APSO is ready");
+  apso.emit('init',apso);
+});
 apso.mapUrls = function(app, cb){
-    app.get(this.options.prefix + 'register', function(req, res,next) {
+    app.get(apso.options.prefix + 'register', function(req, res,next) {
       res.send(bootweb.swig.compileFile("apsoRegister.html")
         .render({
           // values required for layout
@@ -102,7 +106,7 @@ apso.mapUrls = function(app, cb){
           // other values
         }));
     });
-    app.get(this.options.prefix, function(req, res,next) {
+    app.get(apso.options.prefix, function(req, res,next) {
         res.send(bootweb.swig.compileFile("apsoIndex.html")
           .render({
           // values required for layout
@@ -111,7 +115,7 @@ apso.mapUrls = function(app, cb){
           // other values
         }))
     });
-    app.get(this.options.prefix + "bureau", function(req, res,next) {
+    app.get(apso.options.prefix + "bureau", function(req, res,next) {
         res.send(bootweb.swig.compileFile("apsoBureau.html")
           .render({
           // values required for layout
@@ -120,7 +124,7 @@ apso.mapUrls = function(app, cb){
           // other values
         }));
     });
-    app.get(this.options.prefix + "libelles",bootweb.auth.verify("read"), function(req, res,next) {
+    app.get(apso.options.prefix + "libelles",bootweb.auth.verify("read"), function(req, res,next) {
         res.send(bootweb.swig.compileFile("apsoLibelles.html")
           .render({
           // values required for layout
@@ -130,11 +134,11 @@ apso.mapUrls = function(app, cb){
         }));
     });
     // action de vote sur le bureau
-    app.post(this.options.prefix + "bureau", bootweb.auth.verify(),function(req, res,next) {
+    app.post(apso.options.prefix + "bureau", bootweb.auth.verify(),function(req, res,next) {
         
     });
     
-     app.get(this.options.prefix + 'admin', bootweb.auth.verify(),function(req, res,next) {
+     app.get(apso.options.prefix + 'admin', bootweb.auth.verify(),function(req, res,next) {
       res.send(bootweb.swig.compileFile("apsoAdmin.html")
         .render({
           // values required for layout
